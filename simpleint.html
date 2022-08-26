@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+             padding: 0;
+             background-color: blueviolet;
+        }
+
+        .calculate {
+            width: 300px;
+            height: 500px;
+            background-color: rgb(27, 26, 82);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px #2c2b2b;
+            text-align: center;
+            padding: 20px 0px;
+        }
+
+        h2 {
+            color: whitesmoke;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: whitesmoke;
+            margin: 10px;
+        }
+
+        input {
+            width: 70%;
+            height: 30px;
+            padding: 5px;
+            margin: 10px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        button {
+            font-size: 18px;
+            width: 120px;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            color: rgb(26, 25, 25);
+            background-color: plum;
+            font-weight: 999;
+        }
+
+        p {
+            color: whitesmoke;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculate">
+        <h2>Simple Interest Calculator</h2>
+        <label for="amount">Principal Amount</label>
+        <br>
+        <input type="number" placeholder="Enter Principal amount" id="amount">
+        <br>
+        <label for="rate">Rate (%)</label>
+        <br>
+        <input type="number" placeholder="Enter Rate" id="rate">
+        <br>
+        <label for="time">time</label>
+        <br>
+        <input type="number" placeholder="Enter time" id="time">
+        <br>
+        <button onclick="answer()">Calculate</button>
+         <p>Principal Amount:<span id="output_1"></span></p>
+         <p>Total Interest:<span id="output_2"></span></p>
+         <p>Total Value:<span id="output_3"></span></p>
+    </div>
+    
+
+    <script>
+        function answer(){
+            var amount_input=parseInt(document.getElementById("amount").value);
+            var rate_input=parseInt(document.getElementById("rate").value);
+            var time_input=parseInt(document.getElementById("time").value);
+
+            var Interest=amount_input*rate_input*time_input/100;
+            var total=Interest+amount_input;
+
+            document.getElementById("output_1").innerHTML=amount_input;
+            document.getElementById("output_2").innerHTML=Interest;
+            document.getElementById("output_3").innerHTML=total;
+        }
+    </script>
+</body>
+</html>
